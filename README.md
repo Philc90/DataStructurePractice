@@ -1,5 +1,5 @@
 # DataStructurePractice
-## Implement:
+## To do:
 - **LinkedList**
 - **BinaryTree**
     - dfs
