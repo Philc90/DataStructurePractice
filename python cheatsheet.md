@@ -10,11 +10,11 @@ value_if_true `if` condition `else` value_if_false
 
 # Stack
 - use built-in list methods:
-    - empty(): is empty
-    - size(): get size
-    - top(): show top
-    - append()
-    - pop()
+    - not stack: empty
+    - len(stack): size
+    - stack[-1]: top
+    - append(): push
+    - pop(): pop
 
 # Queue
 - there are a few types
