@@ -9,23 +9,23 @@ value_if_true `if` condition `else` value_if_false
 - initialize a list like this: [None] * LIST_LEN
 
 # Stack
-- use built-in list methods:
-    - not stack: empty
-    - len(stack): size
-    - stack[-1]: top
-    - append(): push
-    - pop(): pop
+- use a list & built-in methods
+    - isEmpty(): `not stack`
+    - size(): `len(stack)`
+    - top(): `stack[-1]`
+    - push(): `stack.append()`
+    - pop(): `stack.pop()`
 
 # Queue
-- there are a few types
+- there are a few methods:
     - use built-in list methods
         - append(): enqueue
         - pop(): dequeue
-    - **collections.deque** - use this one
-        - q = deque()
-        - append(): enqueue
-        - popleft(): dequeue
-    - queue.Queue: meant for concurrency
+    - **collections.deque - use this one**
+        - initialize: `q = deque()`
+        - enqueue(): `q.append()`
+        - dequeue(): `q.popleft()`
+    - queue.Queue: this one is meant for concurrency
 
 # Hash Map
 - use dictionary
