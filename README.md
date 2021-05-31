@@ -16,11 +16,11 @@
 # Python Cheatsheet
 
 ## Ternary operator
-value_if_true `if` condition `else` value_if_false
+*value_if_true* `if` *condition* `else` *value_if_false*
 
 ## ASCII char val
-- ord(): convert char to num
-- chr(): convert back
+- `ord()`: convert char to num
+- `chr()`: convert back
 
 ## Fixed Array
 - initialize a list like this: `[None] * LIST_LEN`
@@ -34,10 +34,10 @@ value_if_true `if` condition `else` value_if_false
     - pop(): `stack.pop()`
 
 ## Queue
- - **collections.deque - use this one**
-        - initialize: `q = deque()`
-        - enqueue(): `q.append()`
-        - dequeue(): `q.popleft()`
+ - **collections.deque - use this one:**
+    - initialize: `q = deque()`
+    - enqueue(): `q.append()`
+    - dequeue(): `q.popleft()`
 - a few other methods:
     - use a list & built-in methods (looked like it was less efficient?)
         - append(): enqueue
@@ -45,7 +45,7 @@ value_if_true `if` condition `else` value_if_false
     - queue.Queue: this one is meant for concurrency
 
 ## Hash Map
-- use a built-in dictionary
+- use the built-in dictionary
 
 ## Set
 - initialize empty set: `s = set()`
@@ -56,7 +56,7 @@ value_if_true `if` condition `else` value_if_false
 ## Two pointer technique
 - [Floyd's cycle-finding algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
 - implementation note: easier to remember/write when fast pointer is checked to be None instead of checking fast.next to be none
-    - e.g. `while fast and fast.next:` instead of `while fast.next and fast.next.next`
+    - e.g. `while fast and fast.next:` instead of `while fast.next and fast.next.next:`
 
 ## Binary Tree
 - array representation
