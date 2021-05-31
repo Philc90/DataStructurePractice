@@ -23,7 +23,7 @@ value_if_true `if` condition `else` value_if_false
 - chr(): convert back
 
 ## Fixed Array
-- initialize a list like this: [None] * LIST_LEN
+- initialize a list like this: `[None] * LIST_LEN`
 
 ## Stack
 - use a list & built-in methods
@@ -34,36 +34,36 @@ value_if_true `if` condition `else` value_if_false
     - pop(): `stack.pop()`
 
 ## Queue
-- there are a few methods:
-    - use built-in list methods
-        - append(): enqueue
-        - pop(): dequeue
-    - **collections.deque - use this one**
+ - **collections.deque - use this one**
         - initialize: `q = deque()`
         - enqueue(): `q.append()`
         - dequeue(): `q.popleft()`
+- a few other methods:
+    - use a list & built-in methods (looked like it was less efficient?)
+        - append(): enqueue
+        - pop(): dequeue
     - queue.Queue: this one is meant for concurrency
 
 ## Hash Map
-- use dictionary
+- use a built-in dictionary
 
 ## Set
-- empty: set()
-- initialize with values: { 'one', 'two' }
+- initialize empty set: `s = set()`
+- initialize with values: `s = { 'one', 'two' }`
 - methods:
-    - add(elem)
+    - `s.add(elem)`
 
 ## Two pointer technique
 - [Floyd's cycle-finding algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
-- LL: better to have fast pointer be checked to be None instead of checking fast.next to be none
-    - e.g. `while fast and fast.next:`
+- implementation note: easier to remember/write when fast pointer is checked to be None instead of checking fast.next to be none
+    - e.g. `while fast and fast.next:` instead of `while fast.next and fast.next.next`
 
 ## Binary Tree
 - array representation
-    - for node at ith index:
-        - left child at `2i + 1`
-        - right child at `2i + 2`
-        - parent at `(i-1)/2`
+    - for node at index `i`:
+        - left child is at `2i + 1`
+        - right child is at `2i + 2`
+        - parent is at `(i-1)/2`
 
 
 
