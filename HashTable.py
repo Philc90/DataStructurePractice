@@ -39,7 +39,7 @@ class HashTable:
         elif isinstance(input, KeyValuePair):
             return ord(input.key[0])
         else:
-            return -1
+            raise(Exception('This class only supports string and KeyValuePair keys'))
 
     def insert(self, input):
         hashIdx = self.hashFunction(input)
