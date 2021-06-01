@@ -23,7 +23,7 @@
 - `chr()`: convert back
 
 ## Fixed Array
-- initialize a list like this: `[None] * LIST_LEN`
+- initialize a list like this: `[None] * FIXED_LEN`
 
 ## Stack
 - use a list & built-in methods

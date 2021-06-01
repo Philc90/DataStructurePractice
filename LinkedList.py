@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, val, next):
+    def __init__(self, val, next=None):
         self.val = val
         self.next = next
 
@@ -7,7 +7,7 @@ class Node:
         return '{' + self.val + '}'
 
 class LinkedList:
-    def __init__(self, head):
+    def __init__(self, head=None):
         self.head = head
 
     def __str__(self):
@@ -19,17 +19,17 @@ class LinkedList:
         formattedStr += '|||'
         return formattedStr
 
-n0 = Node('0', None)
-n1 = Node('1', None)
-n2 = Node('2', None)
+n0 = Node('0')
+n1 = Node('1')
+n2 = Node('2')
 
 ll = LinkedList(n0)
 n0.next = n1
 n1.next = n2
 print(ll)
 
-l2 = LinkedList(None)
+l2 = LinkedList()
 print(l2)
 
-l2.head = Node('test', None)
+l2.head = Node('test')
 print(l2)
