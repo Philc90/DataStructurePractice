@@ -43,7 +43,7 @@ class HashTable:
 
     def insert(self, input):
         hashIdx = self.hashFunction(input)
-        if self.hashTable[hashIdx]: # collison. insert to end of LL
+        if self.hashTable[hashIdx]: # collision. insert to end of LL
             self.hashTable[hashIdx].addLast(Node(input))
         else:
             self.hashTable[hashIdx] = LinkedList(Node(input))

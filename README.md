@@ -34,14 +34,14 @@
     - pop(): `stack.pop()`
 
 ## Queue
- - **collections.deque - use this one:**
-    - initialize: `q = deque()`
+- simplest: use a list & built-in methods (perhaps less efficient? look into this)
     - enqueue(): `q.append()`
-    - dequeue(): `q.popleft()`
-- a few other methods:
-    - use a list & built-in methods (looked like it was less efficient?)
-        - append(): enqueue
-        - pop(): dequeue
+    - dequeue(): `q.pop(0)`
+- other options in Python:
+    - collections.deque:
+        - initialize: `q = deque()`
+        - enqueue(): `q.append()`
+        - dequeue(): `q.popleft()`
     - queue.Queue: this one is meant for concurrency
 
 ## Hash Map
