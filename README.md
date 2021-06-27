@@ -8,10 +8,13 @@
 - Queue
 - HashMap
 - Heap
+    - heapify
 - Graph
-- https://leetcode.com/problems/palindrome-linked-list/
+    - dfs
+    - bfs
+- Sorting algorithms
 
-
+---
 
 # Python Cheatsheet
 
@@ -24,6 +27,9 @@
 
 ## Fixed Array
 - initialize a list like this: `[None] * FIXED_LEN`
+
+## List
+- myList.extend(otherList): appends elements of another list to current list
 
 ## Stack
 - use a list & built-in methods
@@ -46,17 +52,26 @@
 
 ## Hash Map
 - use the built-in dictionary
+- Note: **OrderedDict** is a useful class
 
 ## Set
 - initialize empty set: `s = set()`
 - initialize with values: `s = { 'one', 'two' }`
 - methods:
     - `s.add(elem)`
+    - `s.remove(elem)`
+
+---
+
+# Algorithms / techniques
 
 ## Two pointer technique
 - [Floyd's cycle-finding algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
 - implementation note: easier to remember/write when fast pointer is checked to be None instead of checking fast.next to be none
     - e.g. `while fast and fast.next:` instead of `while fast.next and fast.next.next:`
+## Sliding Window
+
+## Boyer-Moore Voting Algorithm
 
 ## Binary Tree
 - array representation
@@ -65,7 +80,7 @@
         - right child is at `2i + 2`
         - parent is at `(i-1)/2`
 
-
+---
 
 # other stuff
 
