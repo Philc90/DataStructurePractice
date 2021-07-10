@@ -8,24 +8,23 @@ class TreeNode:
 
 def dfs(root):
     stack = [root]
-    while len(stack) > 0:
-        current = stack.pop()
+    while stack: # len(stack) > 0
+        current = stack.pop() # pop top
         print(current.data, end='')
-        if current.right != None:
+        if current.right:
             stack.append(current.right)
-        if current.left != None:
+        if current.left:
             stack.append(current.left)
     print('')
 
 def bfs(root):
-    queue = collections.deque()
-    queue.append(root)
-    while len(queue) > 0:
-        current = queue.popleft()
+    queue = [root]
+    while queue: # len(queue) > 0
+        current = queue.pop(0) # pop front
         print(current.data, end='')
-        if current.left != None:
+        if current.left:
             queue.append(current.left)
-        if current.right != None:
+        if current.right:
             queue.append(current.right)
     print('')
 
@@ -47,15 +46,15 @@ dfs(root)
 print('bfs:')
 bfs(root)
 
-def turnToArray(node, treeArr, idx):
-    if node == None:
-        return idx
+# def turnToArray(node, treeArr, idx):
+#     if node == None:
+#         return idx
 
-    treeArr[idx] = node
-    idx += 1
-    idx = turnToArray(node, treeArr, idx)
-    idx = turnToArray(node, treeArr, idx)
+#     treeArr[idx] = node
+#     idx += 1
+#     idx = turnToArray(node, treeArr, idx)
+#     idx = turnToArray(node, treeArr, idx)
 
-    return idx
+#     return idx
 
-print(turnToArray(root, [None] * 2000, 0))
+# print(turnToArray(root, [None] * 2000, 0))

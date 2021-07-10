@@ -1,12 +1,12 @@
 # DataStructurePractice
 ## To do:
-- **LinkedList**
-- **BinaryTree**
-    - dfs
-    - bfs
-- Stack
-- Queue
-- HashMap
+- **LinkedList** √
+- **BinaryTree** √
+    - dfs √
+    - bfs √
+- Stack √
+- Queue √
+- HashMap √
 - Heap
     - heapify
 - Graph
@@ -25,11 +25,19 @@
 - `ord()`: convert char to num
 - `chr()`: convert back
 
+## Bit Manipulation
+- generate *n* 1's
+    - `bin((1 << n + 1) - 1)`
+    - idea: shift 1 left by *n + 1* bits, then subtracting 1 will remove the leftmost 1 and flip all the remaining (*n*) zeros to 1
+
 ## Fixed Array
 - initialize a list like this: `[None] * FIXED_LEN`
 
 ## List
-- myList.extend(otherList): appends elements of another list to current list
+- append elements of another list to current list" `myList.extend(otherList)`
+- sorting a list:
+    - `sorted(myList)` -> returns a **copy**
+    - `myList.sort()` -> sorts **in-place**
 
 ## Stack
 - use a list & built-in methods
@@ -52,7 +60,10 @@
 
 ## Hash Map
 - use the built-in dictionary
-- Note: **OrderedDict** is a useful class
+- Other useful types from the collections library:
+    - Counter: constructor takes an iterable, constructs an object that counts occurrences of each item
+    - OrderedDict: guarantees order of insertion of keys
+    - defaultdict: returns a user-specified default value if non-existent key is retrieved
 
 ## Set
 - initialize empty set: `s = set()`
@@ -69,6 +80,7 @@
 - [Floyd's cycle-finding algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
 - implementation note: easier to remember/write when fast pointer is checked to be None instead of checking fast.next to be none
     - e.g. `while fast and fast.next:` instead of `while fast.next and fast.next.next:`
+
 ## Sliding Window
 
 ## Boyer-Moore Voting Algorithm
