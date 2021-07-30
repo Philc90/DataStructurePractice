@@ -71,6 +71,19 @@
 - methods:
     - `s.add(elem)`
     - `s.remove(elem)`
+    - `s.clear()`
+
+## Min Heap
+- built-in library: `import heapq`
+    - transform list to heap: `heapq.heapify(heapList)`
+    - push: `heapq.heappush(heapList, item)`
+    - pop: `heapq.heappop(heapList)`
+    - extra - more efficient methods
+        - push then pop: `heapq.heappushpop(heapList, item)`
+        - pop then push: `heapq.heapreplace(heapList, item)`
+
+## Max Heap
+- built-in heapq is a min heap by default. One way to still use it is to multiply nums by -1 before pushing, then multiply by -1 when popping to restore val.
 
 ---
 
