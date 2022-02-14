@@ -54,7 +54,7 @@
     - queue.Queue: this one is meant for concurrency
 
 ### Binary Tree
-```
+```python3
 class TreeNode:
     def __init__(self, data, left, right):
         self.data = data
@@ -99,7 +99,7 @@ class TreeNode:
 - built-in heapq is a min heap by default. One way to still use it is to multiply nums by -1 before pushing, then multiply by -1 when popping to restore val.
 
 ### Trie
-```
+```python3
 class TrieNode:
     def __init__(self):
         self.children = {}
