@@ -1,5 +1,130 @@
 # DataStructurePractice
-## To do:
+
+# Python Cheatsheet
+
+## Common Operations
+
+### String Operations
+- reverse: `s[::-1]`
+
+### Ternary operator format
+*value_if_true* `if` *condition* `else` *value_if_false*
+
+### ASCII char val conversion
+- `ord()`: convert char to num
+- `chr()`: convert back
+
+### Bit Manipulation
+- generate *n* 1's
+    - `bin((1 << n + 1) - 1)`
+    - approach: shift 1 left by *n + 1* bits, then subtracting 1 will remove the leftmost 1 and flip all the remaining (*n*) zeros to 1
+
+### Fixed Array
+- initialize a list like this: `[None] * FIXED_LEN`
+
+## Implementations of Data Structures
+
+### List
+- append elements of another list to current list" `myList.extend(otherList)`
+- sorting a list:
+    - `sorted(myList)` -> returns a **copy**
+        - Options
+            - `reverse=True`: descending order instead of ascending order
+            - `key=...`: sort by a different key
+                - e.g. sort tuple by second item: `key=lambda x:x[1]`
+    - `myList.sort()` -> sorts **in-place**
+
+### Stack
+- use a list & built-in methods
+    - isEmpty(): `not stack`
+    - size(): `len(stack)`
+    - top(): `stack[-1]`
+    - push(): `stack.append()`
+    - pop(): `stack.pop()`
+
+### Queue
+- simplest: use a list & built-in methods (perhaps less efficient? look into this)
+    - enqueue(): `q.append()`
+    - dequeue(): `q.pop(0)`
+- other options in Python:
+    - collections.deque:
+        - initialize: `q = deque()`
+        - enqueue(): `q.append()`
+        - dequeue(): `q.popleft()`
+    - queue.Queue: this one is meant for concurrency
+
+### Binary Tree
+```
+class TreeNode:
+    def __init__(self, data, left, right):
+        self.data = data
+        self.left = left
+        self.right = right
+```
+- array representation of a complete binary tree:
+    - use list
+    - for node at index `i`:
+        - left child is at `2i + 1`
+        - right child is at `2i + 2`
+        - parent is at `(i-1)/2`
+
+### Hash Map
+- use the built-in dictionary
+- Other useful dictionary types from the collections library:
+    - Counter: constructor takes an iterable, constructs an object that counts occurrences of each item
+    - OrderedDict: guarantees order of insertion of keys
+        - methods:
+            - `od[key] = value`
+            - `od.pop(key)`
+    - defaultdict: returns a user-specified default value if non-existent key is retrieved
+
+### Set
+- initialize empty set: `s = set()`
+- initialize with values: `s = { 'one', 'two' }`
+- methods:
+    - `s.add(elem)`
+    - `s.remove(elem)`
+    - `s.clear()`
+
+### Min Heap
+- built-in library: `import heapq`
+    - transform list to heap: `heapq.heapify(array)`
+    - push: `heapq.heappush(array, item)`
+    - pop: `heapq.heappop(array)`
+    - extra - more efficient methods
+        - push then pop: `heapq.heappushpop(array, item)`
+        - pop then push: `heapq.heapreplace(array, item)`
+
+### Max Heap
+- built-in heapq is a min heap by default. One way to still use it is to multiply nums by -1 before pushing, then multiply by -1 when popping to restore val.
+
+### Trie
+```
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.endOfWord = False
+        self.visitedCount = 0
+```
+
+---
+
+# Algorithms / techniques
+
+## Two pointer technique
+- [Floyd's cycle-finding algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
+- implementation note: easier to remember/write when fast pointer is checked to be None instead of checking fast.next to be none
+    - e.g. `while fast and fast.next:` instead of `while fast.next and fast.next.next:`
+
+## Sliding Window
+
+## Boyer-Moore Voting Algorithm
+
+---
+
+# other stuff
+
+### To do:
 - **LinkedList** √
 - **BinaryTree** √
     - dfs √
@@ -16,99 +141,7 @@
 
 ---
 
-# Python Cheatsheet
-
-## Ternary operator
-*value_if_true* `if` *condition* `else` *value_if_false*
-
-## ASCII char val
-- `ord()`: convert char to num
-- `chr()`: convert back
-
-## Bit Manipulation
-- generate *n* 1's
-    - `bin((1 << n + 1) - 1)`
-    - idea: shift 1 left by *n + 1* bits, then subtracting 1 will remove the leftmost 1 and flip all the remaining (*n*) zeros to 1
-
-## Fixed Array
-- initialize a list like this: `[None] * FIXED_LEN`
-
-## List
-- append elements of another list to current list" `myList.extend(otherList)`
-- sorting a list:
-    - `sorted(myList)` -> returns a **copy**
-    - `myList.sort()` -> sorts **in-place**
-
-## Stack
-- use a list & built-in methods
-    - isEmpty(): `not stack`
-    - size(): `len(stack)`
-    - top(): `stack[-1]`
-    - push(): `stack.append()`
-    - pop(): `stack.pop()`
-
-## Queue
-- simplest: use a list & built-in methods (perhaps less efficient? look into this)
-    - enqueue(): `q.append()`
-    - dequeue(): `q.pop(0)`
-- other options in Python:
-    - collections.deque:
-        - initialize: `q = deque()`
-        - enqueue(): `q.append()`
-        - dequeue(): `q.popleft()`
-    - queue.Queue: this one is meant for concurrency
-
-## Hash Map
-- use the built-in dictionary
-- Other useful types from the collections library:
-    - Counter: constructor takes an iterable, constructs an object that counts occurrences of each item
-    - OrderedDict: guarantees order of insertion of keys
-    - defaultdict: returns a user-specified default value if non-existent key is retrieved
-
-## Set
-- initialize empty set: `s = set()`
-- initialize with values: `s = { 'one', 'two' }`
-- methods:
-    - `s.add(elem)`
-    - `s.remove(elem)`
-    - `s.clear()`
-
-## Min Heap
-- built-in library: `import heapq`
-    - transform list to heap: `heapq.heapify(heapList)`
-    - push: `heapq.heappush(heapList, item)`
-    - pop: `heapq.heappop(heapList)`
-    - extra - more efficient methods
-        - push then pop: `heapq.heappushpop(heapList, item)`
-        - pop then push: `heapq.heapreplace(heapList, item)`
-
-## Max Heap
-- built-in heapq is a min heap by default. One way to still use it is to multiply nums by -1 before pushing, then multiply by -1 when popping to restore val.
-
----
-
-# Algorithms / techniques
-
-## Two pointer technique
-- [Floyd's cycle-finding algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
-- implementation note: easier to remember/write when fast pointer is checked to be None instead of checking fast.next to be none
-    - e.g. `while fast and fast.next:` instead of `while fast.next and fast.next.next:`
-
-## Sliding Window
-
-## Boyer-Moore Voting Algorithm
-
-## Binary Tree
-- array representation
-    - for node at index `i`:
-        - left child is at `2i + 1`
-        - right child is at `2i + 2`
-        - parent is at `(i-1)/2`
-
----
-
-# other stuff
-
+from reddit comment
 > I know I'm a little late to the party, but I really want to give my advice since I struggled with this for a really long time as well. I think one of the first things anyone preparing for the interview game should read the intro chapters of CTCI (up until chapter 1). The reason for this is that it goes over the actual strategy behind solving coding problems. For those who don't know it, I'll talk about the importance of it here. When you're first given a problem, ask about it! Ask for what the valid inputs are and clarify just everything about the problem, then go over the test case(s) that they provide with you. This will help get you more comfortable with the problem and better suited to get into possible solutions, also this should all be spoken OUT LOUD.
 > 
 > A lot of people sort of just go into test taking mode for interviews, and it is the COMPLETE OPPOSITE for coding problems. On a test, you would usually just write down the correct solution and erase all your wrong work. However, it is in your advantage to talk as much as possible and communicating how you are thinking along the way despite if you are wrong. There are people who emphasize this but not enough, this is what your interviewer is looking for! (most of them at least).
