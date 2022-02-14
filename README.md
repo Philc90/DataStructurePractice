@@ -25,7 +25,7 @@
 ## Implementations of Data Structures
 
 ### List
-- append elements of another list to current list" `myList.extend(otherList)`
+- append elements of another list to current list: `myList.extend(otherList)`
 - sorting a list:
     - `sorted(myList)` -> returns a **copy**
         - Options
